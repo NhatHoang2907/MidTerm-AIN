@@ -1,0 +1,17 @@
+{
+  "schema_version": 2,
+  "notes": "Each rule reads: `course` may only be taken if every course in `requires_all` is completed. Rules reflect the synthetic FIT HANU curriculum (not real HANU policy).",
+  "rules": [
+    { "id": "PR01", "course": "CPR102", "requires_all": ["CPR101"], "comment": "Programming 2 requires Programming 1." },
+    { "id": "PR02", "course": "STA201", "requires_all": ["MAT101"], "comment": "Probability & Statistics requires Calculus." },
+    { "id": "PR03", "course": "DSA201", "requires_all": ["CPR101", "MAT102"], "comment": "Data Structures requires Programming 1 and Discrete Math." },
+    { "id": "PR04", "course": "DBS201", "requires_all": ["DSA201"], "comment": "Database Systems requires Data Structures." },
+    { "id": "PR05", "course": "NET201", "requires_all": ["DSA201"], "comment": "Computer Networks requires Data Structures." },
+    { "id": "PR06", "course": "OPS201", "requires_all": ["DSA201"], "comment": "Operating Systems requires Data Structures." },
+    { "id": "PR07", "course": "SWE301", "requires_all": ["DSA201", "DBS201"], "comment": "Software Engineering requires DSA and Database Systems." },
+    { "id": "PR08", "course": "AIN301", "requires_all": ["CPR101", "STA201", "DSA201"], "comment": "Intro to AI requires Python (CPR101), Probability (STA201), and DSA (DSA201)." },
+    { "id": "PR09", "course": "SEC301", "requires_all": ["NET201"], "comment": "Information Security requires Computer Networks." },
+    { "id": "PR10", "course": "HCI301", "requires_all": ["SWE301"], "comment": "Human-Computer Interaction requires Software Engineering." },
+    { "id": "PR11", "course": "PRJ401", "requires_all": ["SWE301", "DBS201", "AIN301"], "comment": "Capstone Project requires SWE, DBS, and AIN301 (AI). Also implicitly requires ENG301 English exit clearance." }
+  ]
+}

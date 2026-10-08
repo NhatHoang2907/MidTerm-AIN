@@ -1,0 +1,99 @@
+{
+  "schema_version": 2,
+  "notes": "All names, course histories, and credit figures are fictional educational data modelled on FIT HANU context. Not real student records.",
+  "students": [
+    {
+      "id": "S001",
+      "name": "Nguyễn Minh Tuấn",
+      "cohort": "K23",
+      "completed_courses": [
+        { "code": "CPR101", "credits": 3, "grade": "B+" },
+        { "code": "CPR102", "credits": 3, "grade": "A-" },
+        { "code": "MAT101", "credits": 3, "grade": "B" },
+        { "code": "MAT102", "credits": 3, "grade": "B+" },
+        { "code": "STA201", "credits": 3, "grade": "B+" },
+        { "code": "DSA201", "credits": 4, "grade": "A" }
+      ],
+      "self_reported_status": {},
+      "declared_total_credits": 48,
+      "notes": "Straightforward record for a Year-2 IT student at FIT HANU. All prerequisite chains are satisfied. Wants to register for AIN301 (Intro to AI)."
+    },
+    {
+      "id": "S002",
+      "name": "Trần Thị Lan Anh",
+      "cohort": "K24",
+      "completed_courses": [
+        { "code": "CPR101", "credits": 3, "grade": "B" },
+        { "code": "MAT101", "credits": 3, "grade": "C+" },
+        { "code": "GE101", "credits": 2, "grade": "A-" }
+      ],
+      "self_reported_status": {},
+      "declared_total_credits": 17,
+      "notes": "First-year IT student. Has not completed MAT102 or DSA201, so courses that require them (like AIN301) are out of reach. Missing prerequisite detection demo."
+    },
+    {
+      "id": "S003",
+      "name": "Phạm Đức Anh",
+      "cohort": "K21",
+      "completed_courses": [
+        { "code": "CPR101", "credits": 3, "grade": "A" },
+        { "code": "CPR102", "credits": 3, "grade": "B+" },
+        { "code": "MAT101", "credits": 3, "grade": "B" },
+        { "code": "MAT102", "credits": 3, "grade": "B+" },
+        { "code": "STA201", "credits": 3, "grade": "A-" },
+        { "code": "DSA201", "credits": 4, "grade": "A" },
+        { "code": "DBS201", "credits": 3, "grade": "B" },
+        { "code": "NET201", "credits": 3, "grade": "B" },
+        { "code": "OPS201", "credits": 3, "grade": "B-" },
+        { "code": "SWE301", "credits": 3, "grade": "B+" },
+        { "code": "PRJ401", "credits": 8, "grade": "A-" },
+        { "code": "GE101", "credits": 2, "grade": "B" },
+        { "code": "GE110", "credits": 2, "grade": "A" },
+        { "code": "SEC301", "credits": 3, "grade": "B" },
+        { "code": "HCI301", "credits": 3, "grade": "B+" }
+      ],
+      "self_reported_status": {},
+      "declared_total_credits": 128,
+      "notes": "Senior IT student close to graduation. Declared credits (128) are below the 135 threshold and AIN301 (mandatory) was never completed — the KB should surface both: missing mandatory AIN301, and insufficient total credits. PRJ401 should arguably never have been grantable without AIN301."
+    },
+    {
+      "id": "S004",
+      "name": "Lê Quang Bảo",
+      "cohort": "K22",
+      "completed_courses": [
+        { "code": "CPR101", "credits": 3, "grade": "C" },
+        { "code": "DSA201", "credits": 4, "grade": "B" }
+      ],
+      "self_reported_status": {
+        "CPR101": "in_progress"
+      },
+      "declared_total_credits": null,
+      "notes": "Two inconsistencies for the reasoning engine to surface: (1) the completed list marks CPR101 as done while self-reported status claims it is in_progress — the same proposition cannot be both true and false; (2) DSA201 lists CPR101 as a prerequisite, creating a potential chain conflict; (3) declared_total_credits is null, so a graduation credit check has a missing fact and must report 'unknown', not guess."
+    },
+    {
+      "id": "S005",
+      "name": "Hoàng Thị Ngọc",
+      "cohort": "K22",
+      "completed_courses": [
+        { "code": "CPR101", "credits": 3, "grade": "A-" },
+        { "code": "CPR102", "credits": 3, "grade": "B+" },
+        { "code": "MAT101", "credits": 3, "grade": "A" },
+        { "code": "MAT102", "credits": 3, "grade": "B+" },
+        { "code": "STA201", "credits": 3, "grade": "A-" },
+        { "code": "DSA201", "credits": 4, "grade": "A" },
+        { "code": "DBS201", "credits": 3, "grade": "B+" },
+        { "code": "NET201", "credits": 3, "grade": "B" },
+        { "code": "OPS201", "credits": 3, "grade": "B" },
+        { "code": "SWE301", "credits": 3, "grade": "B" },
+        { "code": "AIN301", "credits": 4, "grade": "B+" },
+        { "code": "ENG301", "credits": 2, "grade": "A" },
+        { "code": "GE101", "credits": 2, "grade": "A" },
+        { "code": "GE110", "credits": 2, "grade": "B" },
+        { "code": "HCI301", "credits": 3, "grade": "A-" }
+      ],
+      "self_reported_status": {},
+      "declared_total_credits": 128,
+      "notes": "Near-graduation K22 student: English exit (ENG301) cleared. All mandatory courses done except PRJ401 (Capstone). Declared credits (128) below 135 threshold. Both missing PRJ401 and credit deficit should be flagged. Good demo for 'almost there' scenario."
+    }
+  ]
+}

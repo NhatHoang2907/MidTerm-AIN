@@ -1,0 +1,46 @@
+{
+  "schema_version": 2,
+  "notes": "Four required demo classes for the midterm/final presentation. These are reasoning fixtures for the student's own `entails`/`check_eligibility`/`missing_requirements` implementation — not an autograder answer key. The qualitative field describes what a correct KB over the FIT HANU synthetic curriculum should be able to show.",
+  "test_cases": [
+    {
+      "id": "TC01_enough_prereqs",
+      "class": "enough_prereqs",
+      "student_id": "S001",
+      "query_type": "course_eligibility",
+      "target_course": "AIN301",
+      "description": "Nguyễn Minh Tuấn (K23) has completed CPR101, STA201, and DSA201 — the three prerequisites (PR08) required before AIN301 (Introduction to AI, FIT HANU Year 3).",
+      "expected_behavior": "The reasoning chain should show: CPR101 completed ∧ STA201 completed ∧ DSA201 completed → PR08 satisfied → AIN301 eligible. No missing propositions.",
+      "reasoning_probe": "Show the complete chain of facts and rules that makes AIN301 eligible for this student. Which prerequisite rule (PR-id) fires?"
+    },
+    {
+      "id": "TC02_missing_prereq",
+      "class": "missing_prereq",
+      "student_id": "S002",
+      "query_type": "course_eligibility",
+      "target_course": "AIN301",
+      "description": "Trần Thị Lan Anh (K24, Year 1) has CPR101 and MAT101 but not MAT102, STA201, or DSA201. PR08 requires all three of CPR101, STA201, and DSA201 for AIN301.",
+      "expected_behavior": "The reasoning chain should identify STA201 and DSA201 as missing propositions (and note that DSA201 itself has its own unmet prerequisites: MAT102 is also missing). Report AIN301 as not yet eligible and list the minimal set of courses to complete.",
+      "reasoning_probe": "What is the minimum set of courses this student must complete before AIN301 becomes reachable? In what order should they take them?"
+    },
+    {
+      "id": "TC03_credits_without_mandatory",
+      "class": "credits_without_mandatory",
+      "student_id": "S003",
+      "query_type": "graduation_check",
+      "target_course": "GRADUATION",
+      "description": "Phạm Đức Anh (K21) has declared 128 credits — below the 135 threshold (DR01) — and AIN301 (mandatory under DR02) was never completed. PRJ401 was recorded despite AIN301 being a prerequisite (PR11), creating an inconsistency.",
+      "expected_behavior": "The reasoning chain should show DR01 unsatisfied (128 < 135) and DR02 unsatisfied (AIN301 missing from mandatory list). It should also flag that PRJ401 should not have been grantable given PR11 lists AIN301 as a prerequisite that was never satisfied.",
+      "reasoning_probe": "If AIN301 is added to the record, does the student graduate? Why or why not? What is the remaining credits gap?"
+    },
+    {
+      "id": "TC04_incomplete_conflicting_facts",
+      "class": "incomplete_conflicting_facts",
+      "student_id": "S004",
+      "query_type": "course_eligibility",
+      "target_course": "AIN301",
+      "description": "Lê Quang Bảo (K22) shows CPR101 as completed in the registrar list but 'in_progress' in self_reported_status — a direct contradiction. Also, declared_total_credits is null, making the graduation credit check a missing-fact case, not a false one.",
+      "expected_behavior": "The reasoning engine must not silently pick a side on CPR101. It should report the CPR101 contradiction explicitly and treat the graduation credit check as 'unknown'. For AIN301 eligibility, DSA201 is present but its prerequisites (MAT102 is absent from the record) should still be traced.",
+      "reasoning_probe": "If the two conflicting CPR101 facts are resolved in opposite directions, how does the AIN301 eligibility conclusion change in each case?"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "schema_version": 2,
+  "institution": "Trường Đại học Hà Nội — Khoa Công nghệ Thông tin (FIT HANU). Chương trình Cử nhân CNTT (Synthetic — for educational simulation only, not real HANU records).",
+  "total_credits_to_graduate": 135,
+  "english_exit_requirement": "CEFR C1 or IELTS ≥ 6.0",
+  "courses": [
+    { "code": "CPR101", "title": "Programming 1 (Python)", "credits": 3, "mandatory": true, "program": "IT", "year": 1, "semester": 1 },
+    { "code": "CPR102", "title": "Programming 2 (Data & OOP)", "credits": 3, "mandatory": true, "program": "IT", "year": 1, "semester": 2 },
+    { "code": "MAT101", "title": "Calculus for Computing", "credits": 3, "mandatory": true, "program": "IT", "year": 1, "semester": 1 },
+    { "code": "MAT102", "title": "Discrete Mathematics", "credits": 3, "mandatory": true, "program": "IT", "year": 1, "semester": 2 },
+    { "code": "STA201", "title": "Probability and Statistics", "credits": 3, "mandatory": true, "program": "IT", "year": 2, "semester": 1 },
+    { "code": "DSA201", "title": "Data Structures and Algorithms", "credits": 4, "mandatory": true, "program": "IT", "year": 2, "semester": 1 },
+    { "code": "DBS201", "title": "Database Systems", "credits": 3, "mandatory": true, "program": "IT", "year": 2, "semester": 2 },
+    { "code": "NET201", "title": "Computer Networks", "credits": 3, "mandatory": false, "program": "IT", "year": 2, "semester": 2 },
+    { "code": "OPS201", "title": "Operating Systems", "credits": 3, "mandatory": false, "program": "IT", "year": 2, "semester": 2 },
+    { "code": "SWE301", "title": "Software Engineering Practices", "credits": 3, "mandatory": true, "program": "IT", "year": 3, "semester": 1 },
+    { "code": "AIN301", "title": "Introduction to Artificial Intelligence", "credits": 4, "mandatory": true, "program": "IT", "year": 3, "semester": 1 },
+    { "code": "SEC301", "title": "Information Security Fundamentals", "credits": 3, "mandatory": false, "program": "IT", "year": 3, "semester": 2 },
+    { "code": "HCI301", "title": "Human-Computer Interaction", "credits": 3, "mandatory": false, "program": "IT", "year": 3, "semester": 2 },
+    { "code": "ENG301", "title": "English Proficiency (C1/IELTS Exit)", "credits": 2, "mandatory": true, "program": "IT", "year": 3, "semester": 2 },
+    { "code": "PRJ401", "title": "Graduation Capstone Project", "credits": 8, "mandatory": true, "program": "IT", "year": 4, "semester": 2 },
+    { "code": "GE101", "title": "Academic Writing and Communication", "credits": 2, "mandatory": true, "program": "GENED", "year": 1, "semester": 1 },
+    { "code": "GE110", "title": "Civic and Ethical Reasoning", "credits": 2, "mandatory": false, "program": "GENED", "year": 1, "semester": 2 }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "schema_version": 2,
+  "notes": "Synthetic graduation policy for the FIT HANU Bachelor of IT programme. Both rules must hold for the `graduated` proposition to be entailed. This is fictional educational data, not real HANU regulations.",
+  "mandatory_courses": [
+    "CPR101", "CPR102", "MAT101", "MAT102", "STA201", "DSA201",
+    "DBS201", "SWE301", "AIN301", "ENG301", "GE101", "PRJ401"
+  ],
+  "rules": [
+    {
+      "id": "DR01",
+      "description": "Graduation from FIT HANU Bachelor of IT requires a total of at least 135 credits accumulated across all years.",
+      "type": "credit_threshold",
+      "min_total_credits": 135
+    },
+    {
+      "id": "DR02",
+      "description": "Graduation requires all mandatory courses in the IT programme to be completed.",
+      "type": "mandatory_courses_complete",
+      "ref": "mandatory_courses"
+    },
+    {
+      "id": "DR03",
+      "description": "Graduation requires English exit clearance: CEFR C1 or IELTS >= 6.0 (represented by completing ENG301 or holding a certified exemption).",
+      "type": "english_exit_clearance",
+      "represented_by": "ENG301"
+    }
+  ]
+}
