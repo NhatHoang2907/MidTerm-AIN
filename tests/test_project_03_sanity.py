@@ -123,13 +123,16 @@ def test_load_all_smoke():
 
 
 @pytest.mark.parametrize(
-    "call",
+    "call, expectation",
     [
-        lambda: student_core.entails({}, "eligible(CS201)"),
-        lambda: student_core.check_eligibility({}, "CS201", {}),
-        lambda: student_core.missing_requirements({}, "CS201", {}),
+        (lambda: student_core.entails({}, "eligible(CS201)"), (bool, type(None))),
+        (lambda: student_core.check_eligibility({}, "CS201", {}), (bool, type(None))),
+        (lambda: student_core.missing_requirements({}, "CS201", {}), list),
     ],
 )
-def test_student_core_is_not_implemented(call):
-    with pytest.raises(NotImplementedError):
-        call()
+def test_student_core_smoke(call, expectation):
+    result = call()
+    if expectation is list:
+        assert isinstance(result, list)
+    else:
+        assert isinstance(result, expectation)
